@@ -32,6 +32,16 @@ WildBattleBGM=Battle- Wild3.mp3
 TrainerBattleBGM=Battle- Trainers.mp3
 WildVictoryME=Victory!.mp3
 TrainerVictoryME=Victory!.mp3
+[008]
+# Central Maple Town
+Outdoor=true
+Weather=Blizzard,100
+SnapEdges=true
+[010]
+# Mt. Maple
+Outdoor=true
+Weather=Blizzard,100
+SnapEdges=true
 [012]
 Outdoor=true
 ShowArea=true
