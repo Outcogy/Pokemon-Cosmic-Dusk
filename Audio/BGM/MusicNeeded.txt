@@ -1,0 +1,12 @@
+Places:
+Atmosphere- Glacial Peak
+Atmosphere- Quantum's Base  <- Keep all of them
+Atmosphere- Gamble
+Atmosphere- Obscura
+
+Battles wild/trainers:
+
+Battle- Wild Special
+
+Battle- Trainer
+

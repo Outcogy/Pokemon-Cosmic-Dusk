@@ -1,0 +1,9 @@
+Exception: NameError
+Message: uninitialized constant ObjectSpace::WeakMap
+BitmapCache:163
+Export/Import Scripts:333:in `eval'
+Export/Import Scripts:336
+Export/Import Scripts:333:in `each_with_index'
+Export/Import Scripts:333:in `each'
+Export/Import Scripts:333:in `each_with_index'
+Export/Import Scripts:333
