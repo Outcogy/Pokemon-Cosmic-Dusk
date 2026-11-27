@@ -1,0 +1,2 @@
+# Map connections use named sections. Each point is either an edge and offset
+# (for example North,12) or an absolute X,Y coordinate.

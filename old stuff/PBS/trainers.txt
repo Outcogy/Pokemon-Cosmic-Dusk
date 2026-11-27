@@ -1,0 +1,3 @@
+﻿# Generated from the legacy trainer block format.
+# Custom keys preserve data that does not exist in the stock v21 trainer schema.
+#-------------------------------

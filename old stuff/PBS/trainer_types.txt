@@ -1,0 +1,22 @@
+﻿# Generated from the legacy trainer type CSV.
+#-------------------------------
+[TRAINER_BOY]
+LegacyTrainerTypeID = 0
+Name = PkMn Trainer
+BaseMoney = 100
+Gender = Male
+SkillLevel = 255
+#-------------------------------
+[TRAINER_NB]
+LegacyTrainerTypeID = 1
+Name = PkMn Trainer
+BaseMoney = 100
+Gender = Male
+SkillLevel = 255
+#-------------------------------
+[TRAINER_GIRL]
+LegacyTrainerTypeID = 2
+Name = PkMn Trainer
+BaseMoney = 100
+Gender = Male
+SkillLevel = 255
