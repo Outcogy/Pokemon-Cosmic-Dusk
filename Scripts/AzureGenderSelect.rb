@@ -259,8 +259,7 @@ def selection
     else
       pbChangePlayer(0)
       @sprites["msgwindow"].visible=false
-      Kernel.pbMessage(_INTL("Well, you look better than I thought."))
-      Kernel.pbMessage(_INTL("So.. you have a name?"))
+      Kernel.pbMessage(_INTL("Lookin sharp! Now tell me, what's your name?"))
       selectName
     end
   # Neutral is selected  
@@ -284,8 +283,7 @@ def selection
     else
       pbChangePlayer(2)
       @sprites["msgwindow"].visible=false
-      Kernel.pbMessage(_INTL("Well, you look better than I thought."))
-      Kernel.pbMessage(_INTL("So.. you have a name?"))
+      Kernel.pbMessage(_INTL("Lookin sharp! Now tell me, what's your name?"))
       selectName
     end
   # Girl is selected
@@ -313,8 +311,7 @@ def selection
     else
       pbChangePlayer(1)
       @sprites["msgwindow"].visible=false
-      Kernel.pbMessage(_INTL("Well, you look better than I thought."))
-      Kernel.pbMessage(_INTL("So.. you have a name?"))
+      Kernel.pbMessage(_INTL("Lookin sharp! Now tell me, what's your name?"))
       selectName
     end
   end
@@ -325,7 +322,7 @@ def selectName
   if WRITETRAINERNAME
     pbHide
     pbTrainerName
-    if !Kernel.pbConfirmMessage(_INTL("Is that really your name? {1}?",$Trainer.name))
+    if !Kernel.pbConfirmMessage(_INTL("Your name is {1}, right?",$Trainer.name))
       selectName
     else
       pbShow
@@ -339,8 +336,8 @@ def selectName
 end
 
 def finalMessage
-  Kernel.pbMessage(_INTL("Kidding.",$Trainer.name))
-  Kernel.pbMessage(_INTL("That sounds nice, fits you well."))
+  Kernel.pbMessage(_INTL("{1}... What a lovely name!",$Trainer.name))
+  Kernel.pbMessage(_INTL("Great, everything checks out!"))
 end
 
 def pbUpdate

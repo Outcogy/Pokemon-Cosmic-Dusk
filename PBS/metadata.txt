@@ -1,122 +1,26 @@
 ﻿[000]
 Home=0,0,0,0
-WildBattleBGM=Wild Battle - Regular.mp3
-TrainerBattleBGM=Battle - Trainers.mp3
-WildVictoryME=Victory!.mp3
+TrainerBattleBGM=Wild Battle - Regular.mp3
+WildVictoryME=Battle - Trainers.mp3
 TrainerVictoryME=Victory!.mp3
-SurfBGM=Music - Surf.mp3
-BicycleBGM=Music - Bike.mp3
-PlayerA=TRAINER_AXIS,boy_walk,boy_bike,boy_surf,boy_run,boy_dive,fishing000,fishing000surf
-PlayerB=TRAINER_RIA,girl_walk,girl_bike,girl_surf,girl_run,girl_dive,fishing001,fishing001surf
-PlayerC=TRAINER_LEI,NB_walk,NB_bike,NB_surf,NB_run,NB_dive,fishing004,fishing004surf
-PlayerD=KARMA,trchar0000,,,,,,
+SurfBGM=Victory!.mp3
+PlayerA=TRAINER_BOY,boy_walk,boy_bike,boy_surf,boy_run,boy_dive,fishing000,fishing000surf
+PlayerB=TRAINER_GIRL,girl_walk,girl_bike,girl_surf,girl_run,girl_dive,fishing001,fishing001surf
+PlayerC=TRAINER_NB,NB_walk,NB_bike,NB_surf,NB_run,NB_dive,fishing004,fishing004surf
 [003]
 # Maple Town
 Outdoor=true
-Weather=Blizzard,100
+ShowArea=true
 SnapEdges=true
 [004]
 # Route 2
 Outdoor=true
+ShowArea=true
 Weather=Blizzard,100
 SnapEdges=true
-[005]
-# Fall Forest
-SnapEdges=true
-[007]
-# Maple Town
-Outdoor=true
-ShowArea=false
-BattleBack=City
-WildBattleBGM=Battle- Wild3.mp3
-TrainerBattleBGM=Battle- Trainers.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory!.mp3
 [008]
 # Central Maple Town
 Outdoor=true
-Weather=Blizzard,100
-SnapEdges=true
-[010]
-# Mt. Maple
-Outdoor=true
-Weather=Blizzard,100
-SnapEdges=true
-[012]
-Outdoor=true
 ShowArea=true
-BattleBack=City
-TrainerBattleBGM=Battle- Trainers2.mp3
-[014]
-DarkMap=true
-SnapEdges=false
-BattleBack=Sewers
-WildBattleBGM=Battle- Wild2.mp3
-TrainerBattleBGM=Battle- Trainers3.mp3
-WildVictoryME=Victory2.mp3
-TrainerVictoryME=Victory2.mp3
-[016]
-BattleBack=Sewers
-WildBattleBGM=Battle- Wild2.mp3
-WildVictoryME=Victory!.mp3
-[017]
-Outdoor=false
-BattleBack=Sewers
-WildBattleBGM=Battle- Wild2.mp3
-TrainerBattleBGM=Battle- Trainers2.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory!.mp3
-[019]
-Outdoor=true
-Bicycle=true
-BicycleAlways=false
-BattleBack=City
-WildBattleBGM=Battle- Trainers2.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory!.mp3
-[020]
-BattleBack=Sewers
-TrainerBattleBGM=Battle- Players.mp3
-TrainerVictoryME=Victory2.mp3
-[022]
-[024]
-TrainerBattleBGM=Feeling- Tournament.mp3
-TrainerVictoryME=Victory!.mp3
-[025]
-HealingSpot=26,8,7
-TrainerBattleBGM=Feeling- Tournament.mp3
-TrainerVictoryME=Victory!.mp3
-[026]
-[027]
-Outdoor=true
-ShowArea=true
-Bicycle=true
-BattleBack=City
-WildBattleBGM=Battle- Wild3.mp3
-TrainerBattleBGM=Battle- Trainers.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory2.mp3
-[028]
-Outdoor=true
-BattleBack=Forest
-WildBattleBGM=Battle- Wild3.mp3
-TrainerBattleBGM=Battle- Trainers.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory!.mp3
-[029]
-Outdoor=true
-BattleBack=Grassy
-WildBattleBGM=Battle- Wild2.mp3
-TrainerBattleBGM=Battle- Trainers2.mp3
-WildVictoryME=Victory!.mp3
-TrainerVictoryME=Victory!.mp3
-[031]
 Weather=Blizzard,100
 SnapEdges=true
-[038]
-Outdoor=true
-[054]
-BattleBack=City
-TrainerBattleBGM=Battle- Trainers3.mp3
-[060]
-[114]

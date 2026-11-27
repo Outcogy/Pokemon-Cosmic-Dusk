@@ -9386,7 +9386,7 @@ MultipleForms.register(:DELPHOX,{
       next "A once-departed soul, returned to life from a distant past. Derives power from resentment, which rises as energy atop its head and takes on the forms of foes. In this way, Zorua vents lingering malice."     # Hisuian
     },
     "getFormOnCreation"=>proc{|pokemon|
-      maps=[7,13]  
+      maps=[7]  
       # Map IDs for Hisuian form
       if $game_map && maps.include?($game_map.map_id)
         next 1

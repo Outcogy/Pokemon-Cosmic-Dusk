@@ -1,0 +1,6 @@
+#####PROTAGONISTS#####
+0,TRAINER_BOY,PkMn Trainer,15,,,,Male,100
+1,TRAINER_GIRL,PkMn Trainer,15,,,,Female,100
+2,TRAINER_NB,PkMn Trainer,15,,,,Mixed,100
+3,TRAINER_MALE,PkMn Trainer,15,,,,Male,100
+4,TRAINER_FEMALE,PkMn Trainer,15,,,,Female,100

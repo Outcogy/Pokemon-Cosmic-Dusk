@@ -54,10 +54,6 @@ class PokeBattle_Battler
         end
       end 
     end
-	if isConst?(ability,PBAbilities,:PURIFYINGSALT) && !(self.moldbroken)
-      @battle.pbDisplay(_INTL("{1} is protected by its Purifying Salt!",pbThis)) if showMessages
-      return false
-    end
     if hasWorkingAbility(:VITALSPIRIT) ||
        hasWorkingAbility(:INSOMNIA) ||
        hasWorkingAbility(:SWEETVEIL) ||
@@ -109,7 +105,6 @@ class PokeBattle_Battler
     end
     if isConst?(ability,PBAbilities,:VITALSPIRIT) ||
       isConst?(ability,PBAbilities,:INSOMNIA) ||
-	  isConst?(ability,PBAbilities,:PURIFYINGSALT) ||
      (isConst?(ability,PBAbilities,:LEAFGUARD) &&
      ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
       $fefieldeffect == 15 || ($fefieldeffect == 33 &&
@@ -186,10 +181,6 @@ class PokeBattle_Battler
        @battle.pbDisplay(_INTL("{1} is protected by Flower Veil!",pbThis)) if showMessages
       return false
     end 
-	if isConst?(ability,PBAbilities,:PURIFYINGSALT) && !(self.moldbroken)
-      @battle.pbDisplay(_INTL("{1} is protected by its Purifying Salt!",pbThis)) if showMessages
-      return false
-    end
 #### KUROTSUNE - 028 - END  #### JERICHO - 002 - END
     if status==PBStatuses::POISON
       @battle.pbDisplay(_INTL("{1} is already poisoned.",pbThis)) if showMessages
@@ -199,12 +190,11 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("But it failed!")) if showMessages
       return false
     end
-    if ((pbHasType?(:POISON) || pbHasType?(:STEEL) || (isConst?(ability,PBAbilities,:HYDRALIKE) && !(self.moldbroken))) && !(self.corroded)) && !hasWorkingItem(:RINGTARGET)
+    if ((pbHasType?(:POISON) || pbHasType?(:STEEL)) && !(self.corroded)) && !hasWorkingItem(:RINGTARGET)
       @battle.pbDisplay(_INTL("It doesn't affect {1}...",pbThis(true))) if showMessages
       return false
     end   
     if hasWorkingAbility(:IMMUNITY) ||
-       hasWorkingAbility(:HYDRALIKE) ||
       (hasWorkingAbility(:PASTELVEIL) && $fefieldeffect!=45) ||
       (hasWorkingAbility(:LEAFGUARD) &&
       ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
@@ -256,7 +246,6 @@ class PokeBattle_Battler
     return false if self.status!=0 || (isConst?(ability,PBAbilities,:COMATOSE) && $fefieldeffect!=1)
     return false if pbShieldsUp?
     if hasWorkingAbility(:IMMUNITY) ||
-		hasWorkingAbility(:PURIFYINGSALT) ||
        (hasWorkingAbility(:LEAFGUARD) &&
        ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA))||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
         $fefieldeffect == 15 || ($fefieldeffect == 33 &&
@@ -286,7 +275,6 @@ class PokeBattle_Battler
     return false if self.status!=0 || (isConst?(ability,PBAbilities,:COMATOSE) && $fefieldeffect!=1)
     return false if pbHasType?(:POISON) || pbHasType?(:STEEL)
     return false if hasWorkingAbility(:IMMUNITY)
-	return false if hasWorkingAbility(:PURIFYINGSALT)
     return false if pbShieldsUp?
     return false if hasWorkingAbility(:LEAFGUARD) &&
                    ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
@@ -339,10 +327,6 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{1} is protected by it's Water Bubble!",pbThis)) if showMessages
       return false
     end        
-	if isConst?(ability,PBAbilities,:PURIFYINGSALT) && !(self.moldbroken)
-      @battle.pbDisplay(_INTL("{1} is protected by its Purifying Salt!",pbThis)) if showMessages
-      return false
-    end
 #### KUROTSUNE - 028 - END  #### JERICHO - 002 - END
     if self.status==PBStatuses::BURN
       @battle.pbDisplay(_INTL("{1} already has a burn.",pbThis)) if showMessages
@@ -356,7 +340,7 @@ class PokeBattle_Battler
        @battle.pbDisplay(_INTL("It doesn't affect {1}...",pbThis(true))) if showMessages
        return false
     end
-    if hasWorkingAbility(:WATERVEIL) || hasWorkingAbility(:THERMALEXCHANGE) || (hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
+    if hasWorkingAbility(:WATERVEIL) || (hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
        $fefieldeffect == 15 || ($fefieldeffect == 33 &&
        $fecounter>0))) && !(self.moldbroken)
       @battle.pbDisplay(_INTL("{1}'s {2} prevents burns!",pbThis,PBAbilities.getName(self.ability))) if showMessages
@@ -394,11 +378,7 @@ class PokeBattle_Battler
     if isConst?(ability,PBAbilities,:WATERBUBBLE) && !(self.moldbroken)
       @battle.pbDisplay(_INTL("{1} is protected by it's Water Bubble!",pbThis)) if showMessages
       return false
-    end 
-	if isConst?(ability,PBAbilities,:PURIFYINGSALT) && !(self.moldbroken)
-      @battle.pbDisplay(_INTL("{1} is protected by its Purifying Salt!",pbThis)) if showMessages
-      return false
-    end
+    end       
 #### KUROTSUNE - 028 - END  #### JERICHO - 002 - END  
     if self.status==PBStatuses::BURN
       @battle.pbDisplay(_INTL("{1} already has a burn.",pbThis)) if showMessages
@@ -421,7 +401,7 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("It doesn't affect {1}...",pbThis(true))) if showMessages
       return false
     end
-    if hasWorkingAbility(:WATERVEIL) || hasWorkingAbility(:THERMALEXCHANGE) || (hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
+    if hasWorkingAbility(:WATERVEIL) || (hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
       $fefieldeffect == 15 || ($fefieldeffect == 33 &&
       $fecounter>0))) && !(self.moldbroken)
      @battle.pbDisplay(_INTL("{1}'s {2} prevents burns!",pbThis,PBAbilities.getName(self.ability))) if showMessages
@@ -468,7 +448,7 @@ class PokeBattle_Battler
           opponent.pbThis,PBAbilities.getName(opponent.ability),pbThis(true)))
        return false
     end   
-    if hasWorkingAbility(:WATERVEIL) || hasWorkingAbility(:THERMALEXCHANGE) || hasWorkingAbility(:PURIFYINGSALT) || (hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
+    if hasWorkingAbility(:WATERVEIL) ||(hasWorkingAbility(:LEAFGUARD) && ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
        $fefieldeffect == 15 || ($fefieldeffect == 33 &&
        $fecounter>0)))
       @battle.pbDisplay(_INTL("{1}'s {2} prevents {3}'s {4} from working!",
@@ -529,7 +509,6 @@ class PokeBattle_Battler
       return false
     end
     if hasWorkingAbility(:LIMBER) ||
-	   hasWorkingAbility(:PURIFYINGSALT) ||
       (hasWorkingAbility(:LEAFGUARD) &&
       ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
        $fefieldeffect == 15 || ($fefieldeffect == 33 &&
@@ -572,7 +551,6 @@ class PokeBattle_Battler
       return false
     end
     if hasWorkingAbility(:LIMBER) ||
-	   hasWorkingAbility(:PURIFYINGSALT) ||
      (hasWorkingAbility(:LEAFGUARD) &&
      ((@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) ||  @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
      $fefieldeffect == 15 || ($fefieldeffect == 33 &&
@@ -672,24 +650,15 @@ end
        @battle.pbDisplay(_INTL("{1} is protected by Flower Veil!",pbThis)) if showMessages
       return false
     end 
-	if status==PBStatuses::FROZEN
-      @battle.pbDisplay(_INTL("{1} is already frostbitten!",pbThis)) if showMessages
-      return false
-    end
-	if isConst?(species,PBSpecies,:EMOLGA) && self.form==2
-      @battle.pbDisplay(_INTL("{1}'s scorching body prevents it from being frostbitten!",pbThis)) if showMessages
-      return false
-    end
 #### KUROTSUNE - 028 - END  #### JERICHO - 002 - END                    
     if (@battle.pbWeather==PBWeather::SUNNYDAY && !hasWorkingItem(:UTILITYUMBRELLA)) || self.status!=0 || (isConst?(ability,PBAbilities,:COMATOSE) && $fefieldeffect!=1) || 
-      isConst?(ability,PBAbilities,:PURIFYINGSALT) || (hasWorkingAbility(:LEAFGUARD) && $fefieldeffect == 15 || @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
+      (hasWorkingAbility(:LEAFGUARD) && $fefieldeffect == 15 || @battle.field.effects[PBEffects::GrassyTerrain]>0 || $fefieldeffect == 2 ||
       ($fefieldeffect == 33 && $fecounter>0)) ||
        (hasWorkingAbility(:MAGMAARMOR) && $fefieldeffect!=39) ||
        pbOwnSide.effects[PBEffects::Safeguard]>0 ||
        (pbOwnSide.effects[PBEffects::Safeguard]>0 && !(@battle.battlers[@battle.lastMoveUser]).hasWorkingAbility(:INFILTRATOR)) ||
        damagestate.substitute || (effects[PBEffects::Substitute]>0 && !PBMoveData.new(@battle.lastMoveUsed).isSoundBased?) || $fefieldeffect == 7 ||
       (pbHasType?(:ICE) && !hasWorkingItem(:RINGTARGET)) && !(self.moldbroken) || pbShieldsUp?
-        @battle.pbDisplay(_INTL("But it failed!")) if showMessages
         return false
     end
     if ($fefieldeffect == 3 || @battle.field.effects[PBEffects::MistyTerrain]>0) && !isAirborne? # Misty Field
@@ -707,14 +676,10 @@ end
     return true
   end
 
-  def pbFreeze(attacker)
+  def pbFreeze
     self.status=PBStatuses::FROZEN
     self.statusCount=0
-    if self.index!=attacker.index
-      @battle.synchronize[0]=self.index
-      @battle.synchronize[1]=attacker.index
-      @battle.synchronize[2]=PBStatuses::FROZEN
-    end
+    pbCancelMoves
     @battle.pbCommonAnimation("Frozen",self,nil)
   end
 
@@ -737,7 +702,7 @@ end
         @battle.pbDisplay(_INTL("{1} is paralyzed!  It can't move!",pbThis)) 
       when PBStatuses::FROZEN
         @battle.pbCommonAnimation("Frozen",self,nil)
-        @battle.pbDisplay(_INTL("{1} is hurt by its frostbite!",pbThis))
+        @battle.pbDisplay(_INTL("{1} is frozen solid!",pbThis))
     end
   end
 
@@ -778,10 +743,6 @@ end
       @battle.pbDisplay(_INTL("{1}'s {2} prevents confusion!",pbThis,PBAbilities.getName(self.ability))) if showMessages
       return false
     end
-	if isConst?(ability,PBAbilities,:PURIFYINGSALT) && !(self.moldbroken)
-      @battle.pbDisplay(_INTL("{1} is protected by its Purifying Salt!",pbThis)) if showMessages
-      return false
-    end
     if pbOwnSide.effects[PBEffects::Safeguard]>0 && !(@battle.battlers[@battle.lastMoveUser]).hasWorkingAbility(:INFILTRATOR)    
       @battle.pbDisplay(_INTL("{1}'s team is protected by Safeguard!",pbThis)) if showMessages
       return false
@@ -811,7 +772,7 @@ end
       @battle.pbDisplay(_INTL("{1} is already confused!",pbThis)) if showMessages
       return false
     end
-    if (hasWorkingAbility(:OWNTEMPO) || hasWorkingAbility(:PURIFYINGSALT)) && !(self.moldbroken && moldbreakercheck)
+    if hasWorkingAbility(:OWNTEMPO)
       @battle.pbDisplay(_INTL("{1}'s {2} prevents confusion!",pbThis,PBAbilities.getName(self.ability))) if showMessages
       return false
     end
@@ -835,7 +796,7 @@ end
   end
 
   def pbConfuseSelf
-    if @effects[PBEffects::Confusion]==0 && (!hasWorkingAbility(:OWNTEMPO) || !hasWorkingAbility(:PURIFYINGSALT))
+    if @effects[PBEffects::Confusion]==0 && !hasWorkingAbility(:OWNTEMPO)
       @effects[PBEffects::Confusion]=2+@battle.pbRandom(4)
       @battle.pbCommonAnimation("Confusion",self,nil)
       @battle.pbDisplay(_INTL("{1} became confused!",pbThis))
@@ -868,7 +829,7 @@ end
       @battle.pbDisplay(_INTL("But it failed!")) if showMessages
       return false
     end
-    if (hasWorkingAbility(:OBLIVIOUS) || hasWorkingAbility(:PURIFYINGSALT)) && !(self.moldbroken) 
+    if hasWorkingAbility(:OBLIVIOUS) && !(self.moldbroken) 
       @battle.pbDisplay(_INTL("{1}'s {2} prevents romance!",pbThis,
          PBAbilities.getName(self.ability))) if showMessages
       return false
@@ -890,11 +851,7 @@ end
 # Increase stat stages
 #===============================================================================
   def pbTooHigh?(stat)
-    if !(self.moldbroken) && (hasWorkingAbility(:BLAZEBOOST))
-	  return @stages[stat]>=2
-    else
-	  return @stages[stat]>=6
-	end
+    return @stages[stat]>=6
   end
 
   def pbCanIncreaseStatStage?(stat,showMessages=false)
@@ -923,13 +880,13 @@ end
   end
 
 # UPDATE 11/29/2013
-# Contrary & Volcanic Rush
-# calls reduce stat from here if we have contrary or volcanic rush
+# Contrary
+# calls reduce stat from here if we have contrary
 # Added an extra parameter to determine if this was called from reduce stat
 # changed from: def pbIncreaseStat(stat,increment,showMessages,moveid=nil,attacker=nil,upanim=true)
   def pbIncreaseStat(stat,increment,showMessages1,moveid=nil,attacker=nil,upanim=true, cont_call=false, showMessages2=true)
     # here we call reduce instead
-    if (hasWorkingAbility(:CONTRARY) || hasWorkingAbility(:VOLCANICRUSH)) && !cont_call && !(self.moldbroken)
+    if hasWorkingAbility(:CONTRARY) && !cont_call && !(self.moldbroken)
       ret=pbReduceStat(stat,increment,showMessages1,moveid,attacker,upanim,false,true,showMessages2)
       if !ret
         return pbReduceStat(stat,increment,showMessages1,moveid,attacker,upanim,true,true,showMessages2)
@@ -994,9 +951,6 @@ end
       else
         @battle.pbDisplay(arrStatTexts[0]) if showMessages2
       end
-	  
-	  @statrepeat = false
-      @effects[PBEffects::BurningJealousy] = true
       return true
     end
     return false
@@ -1006,11 +960,7 @@ end
 # Decrease stat stages
 #===============================================================================
   def pbTooLow?(stat)
-    if !(self.moldbroken) && (hasWorkingAbility(:BLAZEBOOST))
-	  return @stages[stat]<=-2
-    else
-	  return @stages[stat]<=-6
-	end
+    return @stages[stat]<=-6
   end
 
   # Tickle (04A) and Memento (0E2) can't use this, but replicate it instead.
@@ -1087,8 +1037,8 @@ end
   end
 
 # UPDATE 11/29/2013
-# Contrary & Volcanic Rush
-# Call increase stat if we have contrary or volcanic rush
+# Contrary
+# Call increase stat if we have contrary
 # Added another parameter to determine if we called from within increase
 # changed from: def pbReduceStat(stat,increment,showMessages,moveid=nil,attacker=nil,downanim=true,selfreduce=false)
   def pbReduceStat(stat,increment,showMessages1=true,moveid=nil,attacker=nil,downanim=true,selfreduce=false, cont_call=false, showMessages2=true, mirrored=false)
@@ -1115,8 +1065,8 @@ end
       end
       @battle.pbDisplay(_INTL("{1}'s Mirror Armor blocked the stat drop!", pbThis))
     end
-    # here we call increase if we have contrary or volcanic rush
-    return pbIncreaseStat(stat,increment,showMessages1,moveid,attacker,downanim,true,showMessages2) if (hasWorkingAbility(:CONTRARY) || hasWorkingAbility(:VOLCANICRUSH)) && !cont_call && !(self.moldbroken)
+    # here we call increase if we have contrary
+    return pbIncreaseStat(stat,increment,showMessages1,moveid,attacker,downanim,true,showMessages2) if hasWorkingAbility(:CONTRARY) && !cont_call && !(self.moldbroken)
     # end of update
     arrStatTexts=[]
     if stat==PBStats::ATTACK
@@ -1160,7 +1110,7 @@ end
       end
       # end update
       # UPDATE 11/30/2013
-      # 
+      # Defiant
       if !selfreduce && (hasWorkingAbility(:DEFIANT) || @battle.SilvallyCheck(self, "fighting"))
         pbIncreaseStat(PBStats::ATTACK,2,false,nil,nil,true,false,false)
         @battle.pbDisplay(_INTL("Defiant sharply raised {1}'s Attack!", pbThis))
@@ -1177,9 +1127,6 @@ end
           @battle.pbDisplay(_INTL("Competitive sharply raised {1}'s Special Defense!", pbThis))  
         end
       end
-	  @statrepeat = false
-      @effects[PBEffects::LashOut] = true
-      return true
       
       # end of update
       return true
@@ -1192,7 +1139,7 @@ end
     return false if effects[PBEffects::Substitute]>0
     if hasWorkingAbility(:CLEARBODY) || hasWorkingAbility(:WHITESMOKE) ||
        hasWorkingAbility(:HYPERCUTTER) || hasWorkingAbility(:FULLMETALBODY) ||
-       hasWorkingAbility(:TEMPORALSHIFT) || hasWorkingAbility(:INNERFOCUS) || 
+       hasWorkingAbility(:TEMPORALSHIFT) || hasWorkingAbility(:INNERFOCUS) ||
        hasWorkingAbility(:OBLIVIOUS) || hasWorkingAbility(:OWNTEMPO) || hasWorkingAbility(:EXECUTION)
        hasWorkingAbility(:SCRAPPY)
       abilityname=PBAbilities.getName(self.ability)
@@ -1205,22 +1152,12 @@ end
       @battle.pbDisplay(_INTL("{1} is protected by Mist!",pbThis))
       return false
     end
-	if hasWorkingAbility(:GUARDDOG)
-	  abilityname=PBAbilities.getName(self.ability)
-	  oppabilityname=PBAbilities.getName(opponent.ability)
-	  @battle.pbDisplay(_INTL("{1}'s {2} prevented {3}'s {4} from working!",
-		 pbThis,abilityname,opponent.pbThis(true),oppabilityname))
-      pbIncreaseStatBasic(PBStats::ATTACK,1)
-      @battle.pbCommonAnimation("StatUp",self,nil)
-      @battle.pbDisplay(_INTL("{1} got angry!", pbThis))
-	  return false
-    end
     if pbCanReduceStatStage?(PBStats::ATTACK,false)
       pbReduceStat(PBStats::ATTACK,1,false,nil,nil,true,false,false,false)
       oppabilityname=PBAbilities.getName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} cuts {3}'s Attack!",opponent.pbThis,
-         oppabilityname,pbThis(true))) if !(hasWorkingAbility(:CONTRARY) || hasWorkingAbility(:VOLCANICRUSH))
-      if hasWorkingAbility(:CONTRARY) || hasWorkingAbility(:VOLCANICRUSH)
+         oppabilityname,pbThis(true))) if !hasWorkingAbility(:CONTRARY)          
+      if hasWorkingAbility(:CONTRARY)           
         @battle.pbDisplay(_INTL("{1}'s {2} boosts {3}'s Attack!",opponent.pbThis,
             oppabilityname,pbThis(true)))  
       end   
@@ -1265,8 +1202,7 @@ end
     return false if isFainted?
     return false if effects[PBEffects::Substitute]>0
     if hasWorkingAbility(:CLEARBODY) || hasWorkingAbility(:WHITESMOKE) ||
-       hasWorkingAbility(:FULLMETALBODY) || hasWorkingAbility(:TEMPORALSHIFT) ||
-	   hasWorkingAbility(:GOODASGOLD)
+       hasWorkingAbility(:FULLMETALBODY) || hasWorkingAbility(:TEMPORALSHIFT)
       abilityname=PBAbilities.getName(self.ability)
       oppabilityname=PBAbilities.getName(opponent.ability)
       @battle.pbDisplay(_INTL("{1}'s {2} prevented {3}'s {4} from working!",

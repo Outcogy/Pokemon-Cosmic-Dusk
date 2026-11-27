@@ -137,7 +137,6 @@ begin
     SusCrit           = 144  
     Obstruct          = 145
     Octolock          = 146
-	MukBond           = 147
     # -1 = no stance, 0 = defense stance, 1 = attack stance
     VespiCrest       = 146
     DesertsMark       = 147
@@ -154,19 +153,6 @@ begin
     Switched        = 157
     CritCount       = 158
     UsingItem        = 159
-	PowerShift		= 160
-	SilkTrap		= 161
-	SaltCure        = 162
-	SupremeOverlord = 163
-	DoubleShock		= 164
-	GlaiveRush		= 165
-	BurningJealousy	= 166
-	LashOut			= 167
-	JawLock			= 168
-	JawLockUser		= 169
-	Disguise2		= 170
-	BattleBond		= 171
-	BlazeBoost		= 172
     # These effects apply to a side - starts from 300
     LightScreen   = 300
     LuckyChant    = 301
@@ -204,7 +190,6 @@ begin
     PsychicTerrain = 504
     Splintered = 505
     Rainbow = 506
-	SnowyMountain = 507
     # These effects apply to the usage of a move
     SpecialUsage = 701
     PassedTrying = 702

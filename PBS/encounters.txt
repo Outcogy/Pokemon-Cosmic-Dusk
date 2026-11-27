@@ -1,5 +1,5 @@
 #########################
-004 # Route 2
+004 # Train
 25,10,10
 Land
 PSYDUCK,3
@@ -15,7 +15,7 @@ WOOPER,3
 FOONGUS,3
 FOONGUS,3
 #########################
-007
+007 # Taisho West
 25,10,10
 Land
 WEEDLE,3,5
@@ -31,7 +31,7 @@ IMPIDIMP,2,5
 ZORUA,3,5
 ZORUA,3,5
 #########################
-008
+008 # Taisho West
 25,10,10
 Land
 SNORUNT,4,7
@@ -47,23 +47,7 @@ SWINUB,3,6
 JANGMOO,3,6
 BELDUM,3,5
 #########################
-012
-25,10,10
-Land
-WEEDLE,3,4
-WEEDLE,2,3
-TAILLOW,3,4
-TAILLOW,4,5
-ZIGZAGOON,3,5
-ZIGZAGOON,3,4
-IMPIDIMP,3,4
-IMPIDIMP,2,3
-IMPIDIMP,3,4
-IMPIDIMP,2,3
-ZORUA,2,4
-ZORUA,2,4
-#########################
-019
+019 # Sewage(Scene)
 5,0,0
 Land
 CATERPIE,3,6
@@ -78,35 +62,3 @@ ZIGZAGOON,6,7
 FLETCHLING,4,6
 LOTAD,3,5
 GROOKEY,3,5
-#########################
-028
-25,10,10
-Land
-CATERPIE,3,4
-CATERPIE,3,4
-PIDOVE,3,4
-PIDOVE,3,5
-ZIGZAGOON,3,5
-ZIGZAGOON,3,5
-LOTAD,3,5
-LOTAD,5
-POOCHYENA,3,5
-POOCHYENA,3,5
-RALTS,3,5
-RALTS,3,5
-#########################
-029
-25,10,10
-Land
-LOTAD,3,4
-LOTAD,3,4
-ROSELIA,2,3
-ROSELIA,3,4
-HOPPIP,3,4
-HOPPIP,2,3
-MORELULL,2,3
-MORELULL,2,4
-CHEWTLE,3,4
-CHEWTLE,2,3
-TREECKO,2,4
-TREECKO,3,4

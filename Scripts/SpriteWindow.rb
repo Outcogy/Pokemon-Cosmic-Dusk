@@ -439,7 +439,7 @@ module RTP
 
   def self.getSaveFolder
     if System.platform[/Windows/]
-      savefolder = ENV['USERPROFILE'] + "/Saved Games/Pokemon Remnants/"
+      savefolder = ENV['USERPROFILE'] + "/Saved Games/Pokemon Cosmic Dawn/"
       Dir.mkdir(savefolder) unless (File.exists?(savefolder))
       return savefolder
     else

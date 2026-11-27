@@ -956,13 +956,13 @@ class PokemonLoad
       # Open save directory
       elsif cmdSaveDir>=0 && command==cmdSaveDir
         if System.platform[/Windows/]
-          pathstr = ENV['USERPROFILE'] + "\\Saved Games\\Pokemon Rejuvenation\\"
+          pathstr = ENV['USERPROFILE'] + "\\Saved Games\\Pokemon Cosmic Dawn\\"
           system("explorer #{pathstr}")
         elsif System.platform[/Mac/]
-          pathstr = "~\\Library\\Application Support\\Pokemon Rejuvenation\\"
+          pathstr = "~\\Library\\Application Support\\Pokemon Cosmic Dawn\\"
           system("explorer #{pathstr}")
         elsif System.platform[/Linux/]
-          pathstr = "~\\.local\\share\\Pokemon Rejuvenation\\"
+          pathstr = "~\\.local\\share\\Pokemon Cosmic Dawn\\"
           system("explorer #{pathstr}")
         end
       elsif cmdLanguage>=0 && command==cmdLanguage
