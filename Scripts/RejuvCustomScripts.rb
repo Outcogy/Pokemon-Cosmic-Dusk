@@ -465,12 +465,7 @@ def RaidDen(num)
       for i in $Trainer.party; (i.makeUnmega rescue nil); end
       for i in $Trainer.party
         if isConst?(i.species,PBSpecies,:MIMIKYU)
-	      if i.form==1
-            i.form=0
-		  end
-		  if i.form==3
-		    i.form=2
-		  end
+          i.form=0
         end
         if isConst?(i.species,PBSpecies,:PARAS) ||  isConst?(i.species,PBSpecies,:PARASECT)
           if i.form==2
@@ -484,13 +479,8 @@ def RaidDen(num)
           i.heal
           i.makeUnmega rescue nil
           if isConst?(i.species,PBSpecies,:MIMIKYU)
-			if i.form==1
-			  i.form=0
-			end
-		    if i.form==3
-		      i.form=2
-			end
-		  end
+            i.form=0
+          end
           if isConst?(i.species,PBSpecies,:CRAMORANT)
             i.form=0
           end
@@ -1197,7 +1187,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 86105 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::STUDENT_2,"Aelita")
       $Trainer.party = trainerinfo[2]
       $game_switches[145] = true #we don't have graphics for her
@@ -1209,7 +1198,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 86105 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::STUDENT_3,"Aelita",6)
       $Trainer.party = trainerinfo[2]
 
@@ -1220,7 +1208,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 86105 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::STUDENT_3,"Aelita")
       $Trainer.party = trainerinfo[2]
 
@@ -1249,7 +1236,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 57893 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::LEADER_AMBER2,"Amber")
       $Trainer.party = trainerinfo[2]
       $game_switches[145] = true #we don't have graphics for her
@@ -1258,7 +1244,6 @@ def characterSwitch(character)
       $Trainer.name = "Erin"
       $Trainer.outfit = 0
       $Trainer.id = 80062 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
 
     when "Erin - Diamond"
       pbChangePlayer(17)
@@ -1294,7 +1279,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 30638 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
 
     when "Lavender SPACE"
       pbChangePlayer(22)
@@ -1312,7 +1296,6 @@ def characterSwitch(character)
       $Trainer.name = "Lavender"
       $Trainer.outfit = 15
       $Trainer.id = 30638 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
 
     when "Marianette"
       pbChangePlayer(2)
@@ -1345,7 +1328,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 93509 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::HOOD,"Emma",1)
       $Trainer.party = trainerinfo[2]
 
@@ -1356,7 +1338,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 93509 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::ENIGMA_1,"Melia",4)
       $Trainer.party = trainerinfo[2]
 
@@ -1367,7 +1348,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 93509 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::ENIGMA_1,"Melia",5)
       $Trainer.party = trainerinfo[2]
 
@@ -1378,7 +1358,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 93509 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::ENIGMA_1,"Melia",5)
       $Trainer.party = trainerinfo[2]
 
@@ -1411,7 +1390,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 93509 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::ENIGMA_2,"Melia",2)
       $Trainer.party = trainerinfo[2]
 
@@ -1422,7 +1400,6 @@ def characterSwitch(character)
       $Trainer.party = []
       $Trainer.money = 0
       $Trainer.id = 27412 
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::OUTCAST,"Ren",1)
       $Trainer.party = trainerinfo[2]
 
@@ -1436,7 +1413,6 @@ def characterSwitch(character)
       trainerinfo = pbLoadTrainerDifficult(PBTrainers::OUTCAST,"Ren",3)
       $Trainer.party = trainerinfo[2]
       $PokemonBag.pbStoreItem(PBItems::SILVCREST,1)
-	  $PokemonBag.pbStoreItem(PBItems::MEGARING,1)
 
     when "Saki Realm", "Saki Axis"
       pbChangePlayer(20)

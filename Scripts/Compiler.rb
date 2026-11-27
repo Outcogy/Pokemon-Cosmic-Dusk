@@ -2914,7 +2914,7 @@ end
 
 
 def pbCompileTrainerEvents(mustcompile)
-  pbSetWindowText(_INTL("CosmicDawn")) if !mustcompile
+  pbSetWindowText(_INTL("Pokemon Rejuvenation")) if !mustcompile
   return if !mustcompile
   mapdata=MapData.new
   t = Time.now.to_i
@@ -2973,7 +2973,7 @@ def pbCompileTrainerEvents(mustcompile)
   if changed
     save_data(commonEvents,"Data/CommonEvents.rxdata")
   end
-  pbSetWindowText(_INTL("CosmicDawn"))
+  pbSetWindowText(_INTL("Pokemon Rejuvenation"))
 end
 
 def isPlainEvent?(event)

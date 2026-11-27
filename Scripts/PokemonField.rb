@@ -1011,7 +1011,7 @@ def pbPrepareBattle(battle)
   when 1, 2, 6
     battle.weather=PBWeather::RAINDANCE
     battle.weatherduration=-1
-  when 3, 7, 16
+  when 3, 7
     battle.weather=PBWeather::HAIL
     battle.weatherduration=-1
   when 4
@@ -1024,8 +1024,8 @@ def pbPrepareBattle(battle)
     battle.weather=PBWeather::STRONGWINDS
     battle.weatherduration=-1
   end
-  if $game_switches[1493]==false
-    battle.shiftStyle=($PokemonSystem.battlestyle==1) 
+  if $game_switches[1409]==false
+    battle.shiftStyle=($PokemonSystem.battlestyle==0) 
   else
     battle.shiftStyle=false
   end
@@ -1184,7 +1184,7 @@ def pbWildBattle(species,level,variable=nil,canescape=true,canlose=false)
   $game_switches[290]=false
   $game_variables[704]=0
   $game_variables[699]=0
-  $game_switches[1998]=false
+  $game_switches[1500]=false
   if decision==4
     Achievements.incrementProgress("POKEMON_CAUGHT",1)
     if shinyMon
@@ -1291,8 +1291,10 @@ def pbWildBattleBoss(species,level,variable=nil,canescape=true,canlose=false)
   }
   $game_switches[290]=false
   $game_variables[704]=0
+  $game_variables[298]=0
+  $game_variables[704]=0
   $game_variables[699]=0
-  $game_switches[1998]=false
+  $game_switches[1500]=false
   Input.update
   pbSet(variable,decision)
   return (decision!=2 && decision!=5)
@@ -1481,10 +1483,10 @@ def Kernel.pbPickup(pokemon)
      :NUGGET,
      :STRAWBIC,
      :NUGGET,
-     :BLUEMIC,
-     :BLUEMIC,
-     :EXPCANDYL,
      :RARECANDY,
+     :BLUEMIC,
+     :RARECANDY,
+     :BLUEMIC,
      :BIGNUGGET,
      :LEFTOVERS,
      :LUCKYEGG,
@@ -1832,7 +1834,6 @@ Events.onStepTakenFieldMovement+=proc{|sender,e|
 }
 
 def pbBattleOnStepTaken(repel=false)
-  return if $game_switches[75]
   return if $Trainer.ablePokemonCount==0
   encounterType = $PokemonEncounters.pbEncounterType
   return if encounterType<0

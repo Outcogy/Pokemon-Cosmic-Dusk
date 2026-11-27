@@ -165,7 +165,7 @@ STORAGEBOXES = 35
 #===============================================================================
 DEXDEPENDSONLOCATION = false
 def pbDexNames; return [
-   [_INTL("Ishiwano Pokédex"),0],
+   [_INTL("Aevium Pokédex"),0],
    _INTL("National Pokédex")
 ]; end
 ALWAYSSHOWALLFORMS = false

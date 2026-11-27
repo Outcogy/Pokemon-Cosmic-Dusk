@@ -25,25 +25,23 @@ class PBEvolution
   LevelFemale    = 23
   Location       = 24
   TradeSpecies   = 25
-  BadInfluence   = 26
+  Custom1        = 26
   Affection      = 27
   LevelRain      = 28
   LevelDay       = 29
   LevelNight     = 30
-  LandCritical   = 31
-  Alcremie       = 32
-  Poisoned	     = 33
-  LevelWind      = 34
-  Gimmi          = 35
+  Custom6        = 31
+  Custom7        = 32
+  Custom8        = 33
 
   EVONAMES=["Unknown",
      "Happiness","HappinessDay","HappinessNight","Level","Trade",
      "TradeItem","Item","AttackGreater","AtkDefEqual","DefenseGreater",
      "Silcoon","Cascoon","Ninjask","Shedinja","Beauty",
      "ItemMale","ItemFemale","DayHoldItem","NightHoldItem","HasMove",
-     "HasInParty","LevelMale","LevelFemale","Location","TradeSpecies", "Gimmi", "Poisoned", "LevelWind",
-     "BadInfluence","Affection","LevelRain","LevelDay","LevelNight","LandCritical","Alcremie"
-  ]
+     "HasInParty","LevelMale","LevelFemale","Location","TradeSpecies",
+     "Custom1","Affection","LevelRain","LevelDay","LevelNight","Custom6","Custom7",
+     "Custom8"]
 
   # 0 = no parameter
   # 1 = Positive integer
@@ -812,7 +810,7 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
       return poke if $game_map.map_id==level
     when PBEvolution::TradeSpecies
       return -1
-    when PBEvolution::BadInfluence
+    when PBEvolution::Custom1
        for i in $Trainer.party
         return poke if !i.egg? && (i.type1==17 || i.type2==17) && pokemon.level>=level
       end
@@ -827,17 +825,12 @@ def pbMiniCheckEvolution(pokemon,evonib,level,poke)
       return poke if pokemon.level>=level && PBDayNight.isDay?(pbGetTimeNow)
     when PBEvolution::LevelNight
       return poke if pokemon.level>=level && PBDayNight.isNight?(pbGetTimeNow)
-    when PBEvolution::Poisoned
-      return poke if pokemon.level>=level && pokemon.status == PBStatuses::POISON
-    when PBEvolution::LevelWind
-      return poke if pokemon.level>=level && $game_screen.weather_type == 6
-    when PBEvolution::LandCritical
-      return poke if pokemon.landCritical>=level && pokemon.form == 1
-    when PBEvolution::Gimmi
-      if $PokemonBag.pbQuantity(PBItems::GIMMIGHOULCOIN) > 998 && pokemon.level >=level
-         $PokemonBag.pbDeleteItem(PBItems::GIMMIGHOULCOIN,999)
-         return poke
-      end
+    when PBEvolution::Custom6
+      # Add code for custom evolution type 6
+      return poke if pokemon.critted==true
+    when PBEvolution::Custom7
+      return poke if (pokemon.totalhp-pokemon.hp>=49) && yamaskMaps.include?($game_map.map_id)
+      # Add code for custom evolution type 7
   end
   return -1
 end
@@ -860,42 +853,6 @@ def pbMiniCheckEvolutionItem(pokemon,evonib,level,poke,item)
           else
             pokemon.form=0
           end
-		when 156            # Quilava -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
-		when 502            # Dewott -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
-		when 548            # Petilil -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
-		when 627            # Rufflet -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
-		when 712            # Bergmite -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
-		when 723            # Dartri -> Hisuian forms
-          alolaLevel = 1045
-          if alolaLevel==item
-            pokemon.form=1
-            return poke
-          end
        when 848             # Toxel - A-Toxtricity
         aevianLevel = 12
         if aevianLevel==item
@@ -908,6 +865,8 @@ def pbMiniCheckEvolutionItem(pokemon,evonib,level,poke,item)
       return poke if level==item && pokemon.isMale?
     when PBEvolution::ItemFemale
       return poke if level==item && pokemon.isFemale?
+    when PBEvolution::Custom8
+      return poke if level==item
   end
   return -1
 end

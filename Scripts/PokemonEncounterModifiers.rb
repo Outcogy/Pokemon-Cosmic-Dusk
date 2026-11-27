@@ -58,56 +58,56 @@ Events.onTrainerPartyLoad+=proc {|sender,e|
         i.status=PBStatuses::POISON 
       end  
     end
-    if trainer.trainertype==PBTrainers::LEADER_ARCHER && trainer.name=="Archer"
+    if trainer.trainertype==PBTrainers::LEADER_SOUTA && trainer.name=="Souta"
       for i in party
         if (i.species==PBSpecies::GLISCOR)
           i.status=PBStatuses::POISON if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::LEADER_AIKU && trainer.name=="Aiku"
+    if trainer.trainertype==PBTrainers::LEADER_RYLAND && trainer.name=="Flora"
       for i in party
         if (i.species==PBSpecies::GLISCOR && i.item==PBItems::TELLURICSEED)
           i.status=PBStatuses::POISON if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::KARMA && trainer.name=="???"
+    if trainer.trainertype==PBTrainers::MASKEDMAN && trainer.name=="???"
       for i in party
         if (i.species==PBSpecies::SWELLOW)
           i.status=PBStatuses::BURN if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::PHOTOGRAPHER && trainer.name=="Iris"
+    if trainer.trainertype==PBTrainers::STUDENT && trainer.name=="Aelita"
       for i in party
         if (i.species==PBSpecies::GLISCOR && i.item==PBItems::FLYINGGEM)
           i.status=PBStatuses::POISON if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::BUGCATCHER && trainer.name=="Will"
+    if trainer.trainertype==PBTrainers::KIMONOGIRL2 && trainer.name=="Beatrice"
       for i in party
         if (i.species==PBSpecies::FLAREON)
           i.status=PBStatuses::POISON if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::QUANTUM_PRODIGY && trainer.name=="Izanagi"
+    if trainer.trainertype==PBTrainers::MISFORTUNATEDUO && trainer.name=="Eli and Sharon"
       for i in party
         if (i.species==PBSpecies::URSARING)
           i.status=PBStatuses::PARALYSIS if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::QUANTUM_PRODIGY && trainer.name=="Charles"
+    if trainer.trainertype==PBTrainers::LITTLEDEMON && trainer.name=="Melanie"
       for i in party
         if (i.species==PBSpecies::OBSTAGOON && i.ability==PBAbilities::GUTS)
           i.status=PBStatuses::BURN if $game_variables[200]==2
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::MARTIALARTIST && trainer.name=="Kai"
+    if trainer.trainertype==PBTrainers::DOCTOR && trainer.name=="Isha"
       for i in party
         if (i.species==PBSpecies::GIRATINA)
           case $game_variables[200]
@@ -121,7 +121,7 @@ Events.onTrainerPartyLoad+=proc {|sender,e|
         end  
       end
     end
-    if trainer.trainertype==PBTrainers::LEADER_RAVE && trainer.name=="Rave"
+    if trainer.trainertype==PBTrainers::LEADER_TEXEN && trainer.name=="Texen"
       for i in party
         if (i.species==PBSpecies::MACHAMP)
           i.status=PBStatuses::BURN if $game_variables[200]==2

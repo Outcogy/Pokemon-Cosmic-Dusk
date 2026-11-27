@@ -1,4 +1,4 @@
-﻿[000]
+[000]
 Home=0,0,0,0
 TrainerBattleBGM=Wild Battle - Regular.mp3
 WildVictoryME=Battle - Trainers.mp3

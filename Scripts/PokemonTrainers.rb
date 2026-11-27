@@ -350,12 +350,7 @@ def pbDoubleTrainerBattle(trainerid1, trainername1, trainerparty1, endspeech1,
      for i in $Trainer.party; (i.makeUnmega rescue nil); end
      for i in $Trainer.party
        if isConst?(i.species,PBSpecies,:MIMIKYU)
-	     if i.form==1
-           i.form=0
-		 end
-		 if i.form==3
-		   i.form=2
-		 end
+         i.form=0
        end
        if isConst?(i.species,PBSpecies,:CRAMORANT)
         i.form=0
@@ -372,12 +367,7 @@ def pbDoubleTrainerBattle(trainerid1, trainername1, trainerparty1, endspeech1,
          i.heal
          i.makeUnmega rescue nil
          if isConst?(i.species,PBSpecies,:MIMIKYU)
-	       if i.form==1
-             i.form=0
-		   end
-		   if i.form==3
-		     i.form=2
-		   end
+           i.form=0
          end
          if isConst?(i.species,PBSpecies,:CRAMORANT)
           i.form=0
@@ -548,12 +538,7 @@ def pbTrainerBattle(trainerid,trainername,endspeech,
     for i in $Trainer.party; (i.makeUnmega rescue nil); end
     for i in $Trainer.party
       if isConst?(i.species,PBSpecies,:MIMIKYU)
-	    if i.form==1
-          i.form=0
-		end
-		if i.form==3
-		  i.form=2
-		end
+        i.form=0
       end
       if isConst?(i.species,PBSpecies,:PARAS) ||  isConst?(i.species,PBSpecies,:PARASECT)
         if i.form==2
@@ -567,12 +552,7 @@ def pbTrainerBattle(trainerid,trainername,endspeech,
         i.heal
         i.makeUnmega rescue nil
         if isConst?(i.species,PBSpecies,:MIMIKYU)
-	      if i.form==1
-            i.form=0
-		  end
-		  if i.form==3
-		    i.form=2
-		  end
+          i.form=0
         end
         if isConst?(i.species,PBSpecies,:CRAMORANT)
           i.form=0

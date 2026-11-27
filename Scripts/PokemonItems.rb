@@ -122,8 +122,6 @@ def pbIsEvolutionStone?(item)
                  #isConst?(item,PBItems,:LINKHEART) ||
                  isConst?(item,PBItems,:APOPHYLLPAN) ||
                  isConst?(item,PBItems,:ICESTONE) ||
-				 isConst?(item,PBItems,:GALARICACUFF) ||
-				 isConst?(item,PBItems,:GALARICAWREATH) ||
                  isConst?(item,PBItems,:SWEETAPPLE) ||
                  isConst?(item,PBItems,:TARTAPPLE) ||
                  isConst?(item,PBItems,:CHIPPEDPOT) ||

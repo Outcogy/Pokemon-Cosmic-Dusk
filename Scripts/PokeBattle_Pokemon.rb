@@ -18,9 +18,7 @@ class PokeBattle_Pokemon
   attr_accessor(:pokerus)     # Pokérus strain and infection time
   attr_accessor(:item)        # Held item
   attr_accessor(:itemRecycle) # Consumed held item (used in battle only)
-  attr_accessor(:rageFist)    # Hit counter for Rage Fist
   attr_accessor(:itemInitial) # Resulting held item (used in battle only)
-  attr_accessor(:corrosiveGas)# Corrosive Gas Effect (used in battle only)
   attr_accessor(:mail)        # Mail
   attr_accessor(:fused)       # The Pokémon fused into this one
   attr_accessor(:name)        # Nickname
@@ -313,7 +311,8 @@ class PokeBattle_Pokemon
     @premega = true
   end  
   def isPreMega?
-    return true if @premega==true
+    return false if !($Trainer.numbadges>=12 && $game_variables[200] == 2) && @premega==true
+    return true if ($Trainer.numbadges>=12 && $game_variables[200] == 2) && @premega==true
   end
 
 ################################################################################

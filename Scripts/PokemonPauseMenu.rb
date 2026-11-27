@@ -116,7 +116,7 @@ class PokemonMenu
     commands[cmdPokedex=commands.length]=_INTL("Pokédex") if $Trainer.pokedex && $PokemonGlobal.pokedexViable.length>0
     commands[cmdPokemon=commands.length]=_INTL("Pokémon") if $Trainer.party.length>0 #&& $game_switches[986]==false
     commands[cmdBag=commands.length]=_INTL("Bag") if !pbInBugContest?
-    commands[cmdPokegear=commands.length]=_INTL("Pokégear") if $Trainer.pokegear
+    commands[cmdPokegear=commands.length]=_INTL("CyberNav") if $Trainer.pokegear
     commands[cmdAchievements=commands.length]=_INTL("Achievements")
     commands[cmdTrainer=commands.length]=$Trainer.name
     if pbInSafari?

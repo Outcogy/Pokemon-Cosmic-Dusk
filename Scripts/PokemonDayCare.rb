@@ -249,7 +249,7 @@ def pbDayCareGenerateEgg
   end
   # Generate egg
   egg=PokeBattle_Pokemon.new(babyspecies,EGGINITIALLEVEL,$Trainer)
-  egg.form = mainparent.form unless [479,PBSpecies::FROAKIE,PBSpecies::CHESPIN,PBSpecies::FENNEKIN].include?(egg.species) # New form inheriting
+  egg.form = mainparent.form unless egg.species == 479 # New form inheriting
   # Randomise personal ID
   pid=rand(65536)
   pid|=(rand(65536)<<16)

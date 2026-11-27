@@ -420,7 +420,7 @@ end
 def pbOpenDexData
   $PokemonTemp=PokemonTemp.new if !$PokemonTemp
   if !$PokemonTemp.pokemonDexData
-    pbRgssOpen("Data/dexdata.dat","rb"){|f|
+    pbRgssOpen("Data/dexdata.rxdata","rb"){|f|
        $PokemonTemp.pokemonDexData=f.read
     }
   end
